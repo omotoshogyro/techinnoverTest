@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
-import React from "react";
-
-
+import { StyleSheet, Text, View, FlatList, Animated } from "react-native";
+import React, { useRef } from "react";
+import { Image } from "expo-image";
 import TEText from "../Dcommon/TEText";
-import { PageWrapper } from "../components";
-import { useInsets } from "../hooks";
+import { ContentView, PageWrapper } from "../components";
+import { useAnimatedScroll, useInsets } from "../hooks";
 import { HomeScreenStyles } from "../styles/home.style";
 
 import {
@@ -20,9 +19,11 @@ import {
   Storyringicon,
   Telegramicon,
 } from "../assets/icons";
+import { POST_DATAS, STORY_DATAS, getRandomPeopleImageUrl } from "../datas";
 
 const {
   pageHeaderWrap,
+  storyImageStyle,
   rowAlign,
   storyListHeaderWrap,
   addStoryIconWrap,
@@ -33,15 +34,17 @@ const {
   postActionLeftWrap,
   postHeaderWrap,
   postImageAndTitleWrap,
-  logoAndDropdown
+  logoAndDropdown,
+  profileImageStyle,
 } = HomeScreenStyles;
 
 const HomeScreen = () => {
-  const { top } = useInsets();
+  const { top, deviceWidth } = useInsets();
+  const { trackScroll, animatedValue } = useAnimatedScroll(0, top, 1, 0);
 
   const pageHeader = () => {
     return (
-      <View style={pageHeaderWrap}>
+      <Animated.View style={[pageHeaderWrap, { opacity: animatedValue }]}>
         <View style={logoAndDropdown}>
           <Instagralogoicon />
           <Dropdownicon />
@@ -51,13 +54,19 @@ const HomeScreen = () => {
           <Telegramicon />
           <Newposticon />
         </View>
-      </View>
+      </Animated.View>
     );
   };
 
   const StoryListHeader = () => {
     return (
       <View style={storyListHeaderWrap}>
+        <Image
+          style={storyImageStyle}
+          source={getRandomPeopleImageUrl()}
+          contentFit="cover"
+          transition={1000}
+        />
         <View style={addStoryIconWrap}>
           <Addstoryicon />
         </View>
@@ -68,29 +77,24 @@ const HomeScreen = () => {
   const storyLists = () => {
     return (
       <FlatList
-        data={new Array(10)}
+        data={STORY_DATAS}
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={storyListWrap}
         ListHeaderComponent={StoryListHeader}
-        renderItem={() => {
+        renderItem={({ item }) => {
           return (
             <View style={eachStoryWrap}>
               <View style={{ position: "absolute" }}>
                 <Storyringicon />
               </View>
 
-              {/* To replace with image */}
-              <View
-                style={{
-                  backgroundColor: "gray",
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 70 / 2,
-                  borderColor: "#fff",
-                  borderWidth: 1,
-                }}
-              ></View>
+              <Image
+                style={storyImageStyle}
+                source={item.storyImage}
+                contentFit="cover"
+                transition={1000}
+              />
             </View>
           );
         }}
@@ -107,28 +111,39 @@ const HomeScreen = () => {
     );
   };
 
-  const SinglePost = () => {
+  const SinglePost = ({ item }) => {
+    const {
+      username,
+      profile_image,
+      post_url,
+      number_of_likes,
+      post_info,
+      number_of_comments,
+      date_posted,
+      height,
+      type,
+      audioMutable,
+    } = item;
     return (
-      <View>
+      <View >
         <View style={postHeaderWrap}>
           <View style={postImageAndTitleWrap}>
-            {/* To replace with actual image */}
-            <View
-              style={{
-                width: 24,
-                height: 24,
-                backgroundColor: "gray",
-                borderRadius: 24 / 2,
-              }}
-            ></View>
-            <TEText>instablog9ja and instablog9jamedia</TEText>
+
+            <Image style={profileImageStyle} source={profile_image} />
+            <TEText bold>{username}</TEText>
           </View>
 
           <Moreicon />
         </View>
         {/* post assets view */}
-        <View style={{ height: 375, backgroundColor: "blue" }}></View>
-
+        <ContentView
+          width={deviceWidth}
+          url={post_url}
+          height={height}
+          showIcon={false}
+          type={type}
+          audioMutable={audioMutable}
+        />
         {/* post actions */}
         <View style={postActionWrap}>
           <View style={postActionLeftWrap}>
@@ -141,15 +156,16 @@ const HomeScreen = () => {
 
         {/* post details */}
         <View style={postDetailsWrap}>
-          <TEText bold>100 likes</TEText>
+          <TEText bold>{number_of_likes} likes</TEText>
           <TEText>
-            <TEText bold>Angel </TEText>
-            Username Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt... more
+            <TEText bold>{username} </TEText>
+            {post_info}
           </TEText>
-          <TEText color="#6E6E6E">View all 2 comments</TEText>
+          <TEText color="#6E6E6E">
+            View all {number_of_comments} comments
+          </TEText>
           <TEText size={12} color="#6E6E6E">
-            1 day ago
+            {date_posted}
           </TEText>
         </View>
       </View>
@@ -158,12 +174,13 @@ const HomeScreen = () => {
 
   return (
     <PageWrapper top={false}>
-      <FlatList
-        data={new Array(20)}
+      <Animated.FlatList
+        data={POST_DATAS}
         ListHeaderComponent={HomeScreenHeader}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ gap: 20, paddingTop: top }}
+        contentContainerStyle={{ gap: 20, paddingTop: top, }}
         renderItem={SinglePost}
+        onScroll={trackScroll}
       />
     </PageWrapper>
   );

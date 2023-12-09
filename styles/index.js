@@ -1,5 +1,3 @@
 import { HomeScreenStyles } from "./home.style";
-
-export {
-    HomeScreenStyles
-}
+import { SearchScreenStyles } from "./search.style";
+export { HomeScreenStyles, SearchScreenStyles };

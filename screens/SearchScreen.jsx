@@ -1,16 +1,76 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { PageWrapper } from '../components'
+import {
+  FlatList,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Animated,
+} from "react-native";
+import React from "react";
+import { ContentView, PageWrapper } from "../components";
+import { useAnimatedScroll, useInsets } from "../hooks";
+import { Searchicon } from "../assets/icons";
+import { SearchScreenStyles } from "../styles";
+import { SEARCH_REELS } from "../datas";
 
+const { postSearchWrap, postSearchInput, postsWrap } = SearchScreenStyles;
+
+const RandomPosts = () => {
+  const { top } = useInsets();
+  const { trackScroll, animatedValue } = useAnimatedScroll(0, top, 1, 0);
+
+
+
+  const PostSearchInput = () => {
+    return (
+      <Animated.View
+        style={[
+          postSearchWrap,
+          {
+            opacity: animatedValue,
+          },
+        ]}
+      >
+        <Searchicon />
+        <TextInput
+          style={postSearchInput}
+          placeholder="Search"
+          placeholderTextColor="#969696"
+        />
+      </Animated.View>
+    );
+  };
+
+  return (
+    <Animated.ScrollView
+      onScroll={trackScroll}
+      contentContainerStyle={{ paddingTop: top }}
+    >
+      <PostSearchInput />
+      <View style={postsWrap}>
+        {SEARCH_REELS.map((SEARCH_REEL) => {
+          return (
+            <View style={{ gap: 2 }}>
+              {SEARCH_REEL.tags.map(({ height, fileUrl, type }) => (
+                <ContentView height={height} type={type} url={fileUrl} />
+              ))}
+            </View>
+          );
+        })}
+      </View>
+    </Animated.ScrollView>
+  );
+};
 
 const SearchScreen = () => {
   return (
-    <PageWrapper>
-      <Text>SearchScreen</Text>
+    <PageWrapper top={false}>
+      <RandomPosts />
     </PageWrapper>
-  )
-}
+  );
+};
 
-export default SearchScreen
+export default SearchScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

@@ -7,6 +7,20 @@ export const HomeScreenStyles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 12,
   },
+  profileImageStyle: {
+    width: 24,
+    height: 24,
+    backgroundColor: "#f6f6f6",
+    borderRadius: 24 / 2,
+  },
+  storyImageStyle: {
+    backgroundColor: "#c6c6c6",
+    width: "100%",
+    height: "100%",
+    borderRadius: 70 / 2,
+    borderColor: "#fff",
+    borderWidth: 1,
+  },
   rowAlign: {
     flexDirection: "row",
     alignItems: "center",

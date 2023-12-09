@@ -16,22 +16,23 @@ import {
   Reelstabicon,
   Searchtabicon,
 } from "./assets/icons";
-
+import { Image } from "expo-image";
+import { getRandomPeopleImageUrl } from "./datas";
 
 const Tab = createBottomTabNavigator();
 
 let TabIcon = (name, focused) => {
   switch (name) {
     case "Home":
-      return <Hometabicon focused={focused} />;
+      return <Hometabicon />;
     case "Search":
-      return <Searchtabicon focused={focused} />;
+      return <Searchtabicon />;
     case "Reels":
-      return <Reelstabicon focused={focused} />;
+      return <Reelstabicon />;
     case "Newpost":
-      return <Newposticon focused={focused} />;
+      return <Newposticon />;
     case "Profile":
-      return <Newposticon focused={focused} />;
+      return <Image style={styles.profileImageiconStyle} source={getRandomPeopleImageUrl()} />;
     default:
       break;
   }
@@ -46,7 +47,8 @@ const BottomTab = () => {
           headerShown: false,
           tabBarShowLabel: false,
           tabBarStyle: {
-            backgroundColor: "#000"
+            backgroundColor: "#000",
+            borderColor: "transparent",
           },
         })}
         initialRouteName="Home"
@@ -63,4 +65,10 @@ const BottomTab = () => {
 
 export default BottomTab;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  profileImageiconStyle: {
+    width: 24,
+    height: 24,
+    borderRadius: 24 / 2,
+  },
+});
