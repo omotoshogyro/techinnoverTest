@@ -194,55 +194,55 @@ export const SEARCH_REELS = [
 export const STORY_DATAS = [
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "zoroarmy_edits",
+    username: "Vortex",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "okiki",
+    username: "Quasar",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "zoroarmy_edits",
+    username: "Pixelo",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "okiki",
+    username: "Zephyr",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "zoroarmy_edits",
+    username: "Lyricx",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "okiki",
+    username: "Jumble",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "zoroarmy_edits",
+    username: "Mystic",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "okiki",
+    username: "Blazeo",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "okiki",
+    username: "Radiux",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "zoroarmy_edits",
+    username: "Twirlo",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "okiki",
+    username: "Flickz",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "zoroarmy_edits",
+    username: "Flareo",
   },
   {
     storyImage: getRandomPeopleImageUrl(),
-    username: "okiki",
+    username: "Prismi",
   },
 ];
 
@@ -259,7 +259,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "SereneSeeker",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -270,7 +270,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "StardustSojourner",
     profile_image: getRandomImageUrl(),
     number_of_likes: 139,
     post_info:
@@ -283,7 +283,7 @@ export const POST_DATAS = [
     audioMutable: true,
   },
   {
-    username: "Gyroscope",
+    username: "EtherealExplorer",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -294,7 +294,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "VelvetVoyage",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -305,7 +305,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "QuantumQuasar",
     profile_image: getRandomImageUrl(),
     number_of_likes: 139,
     post_info:
@@ -319,7 +319,7 @@ export const POST_DATAS = [
     audioMutable: true,
   },
   {
-    username: "Gyroscope",
+    username: "NebulaNomad",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -330,7 +330,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "DreamyDrifter",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -341,7 +341,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "CelestialCrafter",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -352,7 +352,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "StarrySpectator",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -363,7 +363,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "LunarLabyrinth",
     profile_image: getRandomImageUrl(),
     number_of_likes: 139,
     post_info:
@@ -377,7 +377,7 @@ export const POST_DATAS = [
     audioMutable: true,
   },
   {
-    username: "Gyroscope",
+    username: "RadiantRoamer",
     profile_image: getRandomImageUrl(),
     number_of_likes: 139,
     post_info:
@@ -391,7 +391,7 @@ export const POST_DATAS = [
     audioMutable: true,
   },
   {
-    username: "Gyroscope",
+    username: "EnigmaticExplorer",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -402,7 +402,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "CosmicComrade",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -413,7 +413,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "MysticMarauder",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -424,7 +424,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "EtherealEmissary",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -435,7 +435,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "TranquilTrailblazer",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -446,7 +446,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "NebulaNomad",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -457,7 +457,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "StardustSojourner",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -468,7 +468,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "AuroraAlchemist",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -479,7 +479,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "LuminousLagoon",
     profile_image: getRandomImageUrl(),
     number_of_likes: 139,
     post_info:
@@ -492,7 +492,7 @@ export const POST_DATAS = [
     audioMutable: true,
   },
   {
-    username: "Gyroscope",
+    username: "GalaxyGazer",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -503,7 +503,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "CelestialCompanion",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -514,7 +514,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "AstralAmigo",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -525,7 +525,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "WanderlustWisp",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -536,7 +536,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "VelvetVoyage",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -547,7 +547,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "QuantumQuasar",
     profile_image: getRandomImageUrl(),
     number_of_likes: 139,
     post_info:
@@ -560,7 +560,7 @@ export const POST_DATAS = [
     audioMutable: true,
   },
   {
-    username: "Gyroscope",
+    username: "StellarStrider",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -571,7 +571,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "InfiniteJourneyer",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -582,7 +582,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "BlissfulVoyage",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -593,7 +593,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "SolarSculptor",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:
@@ -604,7 +604,7 @@ export const POST_DATAS = [
     height: 375,
   },
   {
-    username: "Gyroscope",
+    username: "GlitterGalaxy",
     profile_image: getRandomImageUrl(),
     number_of_likes: getRandomNumberOfLikes(),
     post_info:

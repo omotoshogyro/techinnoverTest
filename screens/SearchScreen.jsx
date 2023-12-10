@@ -17,8 +17,9 @@ import { SEARCH_REELS } from "../datas";
 const { postSearchWrap, postSearchInput, postsWrap } = SearchScreenStyles;
 
 const RandomPosts = () => {
-  const { top } = useInsets();
+  const { top, deviceWidth } = useInsets();
   const { trackScroll, animatedValue } = useAnimatedScroll(0, top, 1, 0);
+  let contentWidth = (deviceWidth / 3)
 
 
 
@@ -45,15 +46,16 @@ const RandomPosts = () => {
   return (
     <Animated.ScrollView
       onScroll={trackScroll}
-      contentContainerStyle={{ paddingTop: top }}
+      contentContainerStyle={{ paddingTop: top, alignItems: "center" }}
+      showsVerticalScrollIndicator={false}
     >
       <PostSearchInput />
       <View style={postsWrap}>
-        {SEARCH_REELS.map((SEARCH_REEL) => {
+        {SEARCH_REELS.map((SEARCH_REEL, index) => {
           return (
-            <View style={{ gap: 2 }}>
+            <View style={{ gap: 2 }} key={index}>
               {SEARCH_REEL.tags.map(({ height, fileUrl, type }) => (
-                <ContentView height={height} type={type} url={fileUrl} />
+                <ContentView key={fileUrl} width={contentWidth} height={height} type={type} url={fileUrl} />
               ))}
             </View>
           );

@@ -70,6 +70,9 @@ const HomeScreen = () => {
         <View style={addStoryIconWrap}>
           <Addstoryicon />
         </View>
+        <TEText size={12} styles={{ textTransform: "lowercase" }}>
+                Sentras
+        </TEText>
       </View>
     );
   };
@@ -84,17 +87,22 @@ const HomeScreen = () => {
         ListHeaderComponent={StoryListHeader}
         renderItem={({ item }) => {
           return (
-            <View style={eachStoryWrap}>
-              <View style={{ position: "absolute" }}>
-                <Storyringicon />
-              </View>
+            <View style={{alignItems: "center"}}>
+              <View style={eachStoryWrap}>
+                <View style={{ position: "absolute" }}>
+                  <Storyringicon />
+                </View>
 
-              <Image
-                style={storyImageStyle}
-                source={item.storyImage}
-                contentFit="cover"
-                transition={1000}
-              />
+                <Image
+                  style={storyImageStyle}
+                  source={item.storyImage}
+                  contentFit="cover"
+                  transition={1000}
+                />
+              </View>
+              <TEText size={12} styles={{ textTransform: "lowercase" }}>
+                {item.username}
+              </TEText>
             </View>
           );
         }}
@@ -125,12 +133,13 @@ const HomeScreen = () => {
       audioMutable,
     } = item;
     return (
-      <View >
+      <View>
         <View style={postHeaderWrap}>
           <View style={postImageAndTitleWrap}>
-
             <Image style={profileImageStyle} source={profile_image} />
-            <TEText bold>{username}</TEText>
+            <TEText bold styles={{ textTransform: "lowercase" }}>
+              {username}
+            </TEText>
           </View>
 
           <Moreicon />
@@ -158,7 +167,9 @@ const HomeScreen = () => {
         <View style={postDetailsWrap}>
           <TEText bold>{number_of_likes} likes</TEText>
           <TEText>
-            <TEText bold>{username} </TEText>
+            <TEText styles={{ textTransform: "lowercase" }} bold>
+              {username}{" "}
+            </TEText>
             {post_info}
           </TEText>
           <TEText color="#6E6E6E">
@@ -178,7 +189,7 @@ const HomeScreen = () => {
         data={POST_DATAS}
         ListHeaderComponent={HomeScreenHeader}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ gap: 20, paddingTop: top, }}
+        contentContainerStyle={{ gap: 20, paddingTop: top }}
         renderItem={SinglePost}
         onScroll={trackScroll}
       />

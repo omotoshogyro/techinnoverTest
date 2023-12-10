@@ -36,6 +36,7 @@ export const HomeScreenStyles = StyleSheet.create({
     borderRadius: 70 / 2,
     borderWidth: 1,
     borderColor: "white",
+    alignItems: "center"
   },
   addStoryIconWrap: {
     position: "absolute",
